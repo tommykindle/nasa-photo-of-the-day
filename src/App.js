@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import axios from "axios";
 import Card from "./Card"
-
+import FixedMenuLayout from "./Menu.js"
+import 'semantic-ui-css/semantic.min.css'
+import SidebarLeft from "./Sidebar.js";
 
 function App() {
   const [data, setData] = useState({});
@@ -16,11 +18,13 @@ function App() {
   }, [])
 
   return (
+
     <div className="App">
+      <FixedMenuLayout logoImg='https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg' />
+      <SidebarLeft />
       <Card title={data.title} photoCaption={data.explanation} imgUrl={data.url} media_type={data.media_type} />
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
+
       </p>
     </div>
   );
